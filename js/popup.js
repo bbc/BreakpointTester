@@ -63,24 +63,23 @@ $(document).on('ready', function() {
 
 	$(".preset").on('click', function() {
 		var width = $(this).attr('data-width');
-			width = (parseInt(width) + 16);
 
-		tracker.sendEvent('Preset', ((width - 16) + 'px'));
+		tracker.sendEvent('Preset', (width + 'px'));
 
 		updateWindow({ width: parseInt(width) });
 	});
 
 	$('#customSet').on('click', function() {
-		var width = (parseInt($('#customBreakpoint').val()) + 16);
+		var width = (parseInt($('#customBreakpoint').val()));
 
-		tracker.sendEvent('Custom', (width - 16) + 'px');
+		tracker.sendEvent('Custom', width + 'px');
 
 		updateWindow({ width: parseInt(width) });
 	})
 });
 
 function updateSlider(width) {
-	$('#customBreakpoint').val(parseInt((width - 16)), { set: true, animate: true });
+	$('#customBreakpoint').val(parseInt(width), { set: true, animate: true });
 }
 
 function updateSliderText() {
@@ -108,7 +107,7 @@ function updateWindow(options) {
 	});
 
 	// Push on to the front of the array
-	history.unshift(parseInt(options.width) - 16);
+	history.unshift(parseIntoptions.width);
 
 	// Trim the length of the array so it's always <= 5
 	history = history.filter(function(value, index) {
@@ -132,6 +131,6 @@ function updateHistory() {
 		var width = parseInt($(this).text().replace('px', ''));
 		tracker.sendEvent('History', width + 'px');
 
-		updateWindow({ width: (width + 16) });
+		updateWindow({ width: width });
 	});
 }
