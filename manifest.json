@@ -1,31 +1,48 @@
 {
-	"manifest_version": 2,
-	"name": "Breakpoint Tester BBC Edition",
-	"version": "1.0.5",
-	"description": "Easily switch between multiple breakpoints to test a sites responsiveness at various screen sizes.",
-	"icons": {
-		"16": "img/logo16.png",
-		"48": "img/logo48.png",
-		"128": "img/logo128.png"
-	},
-	"browser_action": {
-		"default_icon": {
-			"19": "img/logo19.png",
-			"38": "img/logo38.png"
-		},
-		"default_title": "Breakpoint Tester",
-		"default_popup": "popup.html"
-	},
-	"permissions": [
-		"storage",
-		"contextMenus",
-		"system",
-		"system.cpu",
-		"system.memory",
-		"system.storage"
-	],
-	"content_security_policy": "script-src 'self' https://www.google-analytics.com/; object-src 'self'",
-	"author": "Jeffrey Hyer",
-	"homepage_url": "https://github.com/JeffreyHyer/BreakpointTester",
-	"offline_enabled": true
+  "manifest_version": 2,
+  "name": "Breakpoint Tester | BBC Edition",
+  "version": "1.1",
+  "description": "Show current Breakpoint Group and switch between them easily.",
+  "icons": {
+    "16": "img/logo16.png",
+    "48": "img/logo48.png",
+    "128": "img/logo128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/eventListener.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/updateIcon.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "19": "img/logo19.png",
+      "38": "img/logo38.png"
+    },
+    "default_title": "Breakpoint Tester",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "contextMenus",
+    "system",
+    "system.cpu",
+    "system.memory",
+    "system.storage",
+    "http://*/*"
+  ],
+  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "author": "Jeffrey Hyer, Nik Rahmel",
+  "homepage_url": "https://github.com/bbc/BreakpointTester",
+  "offline_enabled": true
 }

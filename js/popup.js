@@ -1,7 +1,4 @@
-var service = analytics.getService('BreakpointTester'),
-	tracker = service.getTracker('UA-12477767-4'),
-
-	history = [],
+var	history = [],
 	preferences = {
 		prefer: 	'left',
 		height: 	screen.availHeight,
@@ -9,8 +6,6 @@ var service = analytics.getService('BreakpointTester'),
 		left: 		0,
 		right: 		0
 	};
-	
-	tracker.sendAppView('Popup');
 
 $(document).on('ready', function() {
 	chrome.storage.sync.get('history', function(obj) {
@@ -64,15 +59,11 @@ $(document).on('ready', function() {
 	$(".preset").on('click', function() {
 		var width = $(this).attr('data-width');
 
-		tracker.sendEvent('Preset', (width + 'px'));
-
 		updateWindow({ width: parseInt(width) });
 	});
 
 	$('#customSet').on('click', function() {
 		var width = (parseInt($('#customBreakpoint').val()));
-
-		tracker.sendEvent('Custom', width + 'px');
 
 		updateWindow({ width: parseInt(width) });
 	})
@@ -129,8 +120,6 @@ function updateHistory() {
 
 	$("#left ul li").off("click").on("click", function(event) {
 		var width = parseInt($(this).text().replace('px', ''));
-		tracker.sendEvent('History', width + 'px');
-
 		updateWindow({ width: width });
 	});
 }

@@ -1,42 +1,29 @@
 # Breakpoint Tester Chrome Extension
+## BBC Edition
 
-The Breakpoint Tester chrome extension is used to quickly and easily test the responsiveness of a website at various breakpoints. Breakpoint Tester ships with some sensible default breakpoints but you're more than welcome to define your own custom breakpoints in the extensions settings.
+The Breakpoint Tester chrome extension allows to quickly set your window size to a predefined breakpoint width, and displays the current breakpoint group in the Icon.
 
-Breakpoint Tester uses the media queries from Bootstrap 3 as a baseline for it's breakpoint presets which are:
-- 480px (Mobile)
-- 768px (Tablet)
-- 992px (Laptop)
-- 1200px (Desktop)
+Breakpoint Tester BBC Edition uses the breakpoints commonly used in the BBC
+- <= 400 px (Mobile)
+- <= 600 px (Tablet)
+- <= 1008 px (Laptop)
+- > 1008 px (Desktop)
 
 ## Installation
-Chrome Webstore: [Breakpoint Tester](https://chrome.google.com/webstore/detail/breakpoint-tester/ffmkpfegfpfjaacpgmbloagbibfnmabj)
-
-TODO: Walk through the installation steps (for installing it manually in developer mode)
-
-## How To Use
-It should be fairly obvious...
-
-TODO: Describe how to use the extension, thow in a screenshot or two for clarity.
+- Get the [latest release](https://github.com/bbc/BreakpointTester/releases)
+- Drag into Chrome
+- Done. Possibly have to restart Chrome
 
 ## Roadmap
-- Add an Options/Settings page
-- Add ability to change height as well as width (enable/disable in settings)
-- Design better icons. They look fine at high resolution (128px) but the smaller they are the worse they look.
-- Use the 'active' class when a preset is selected to denote which breakpoint the window is currently set to.
-- Add ability to save named breakpoints (e.g. 480px = Nexus S)
-- Re-design the GUI. It's OK...but it needs to be spectacular.
-- Add context menu for quick access with toggling the extension popup
-- Add keyboard shortcuts ("commands" in Chrome API) for quickly switching between presets
-	- Ctrl + Left/Right Arrow = "Scroll" through the presets
-- Add ability to choose what framework the presets should be based on or define your own. I'm not sure how different each of the frameworks are when it comes to breakpoints but if there's a need then lets make it happen.
-	- Bootstrap 2
-	- Bootstrap 3
-	- Foundation 4
-	- Foundation 5
-	- Custom Presets (Named)
-
+- Define breakpoints centrally (setting page?)
 
 ## Release History
+
+### v1.1 - BBC Edition
+**April 22, 2016**
++ Change breakpoint to BBC groups (400, 600, 1008)
++ Show current BG in icon on load and window resize
++ Remove Google Analytics logging
 
 ### v1.0.4
 **April 18, 2014**
